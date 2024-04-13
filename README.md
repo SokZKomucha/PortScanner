@@ -9,3 +9,5 @@ Scans for open port `port` across IP adresses from range `addressStart` to `addr
 ## How to run
 
 I think it's pretty obvious. Modify the contents of the `Program.cs` to your liking, then go to the root directory and run `dotnet build`. Once finished, either use `dotnet run`, or go three directories deep into `/bin` and run the executable directly. The main difference between those two methods is where the output file gets saved. Using `dotnet run`, `out.txt` will be saved in root directory. Otherwise, where the executable is located.
+
+It's worth mentioning that the project uses .NET 8. If you'd like to run it as it is, you need to have .NET 8 installed. Otherwise, just modify `.csproj` and you'll be fine.
