@@ -2,7 +2,9 @@
 
 Simple port-scanning application made in C#, using `System.Net`. 
 
-Scans for open port `port` across IP adresses from range `addressStart` to `addressEnd` (both inclusive), while writing found adresses to a file. Uses multithreading for increased performance, albeit compromises on output quality. There's a small problem, where a fraction (<1%) of found IPs are being either split in half or duplicated when saving. I've tried using **lock** statement where I save them, but it didn't help at all. I've noticed setting `sw.AutoFlush` to `false` instead of `true` helps a bit. I am aware that the problem is caused by multithreaded nature of the application, but I just can't be bothered enough to fix it.
+Scans for open port `port` across IP adresses from range `addressStart` to `addressEnd` (both inclusive), while writing found adresses to a file. Uses multithreading for increased performance, albeit compromises on output quality. There's a small problem, where a fraction (<1%) of found IPs are being either split in half or duplicated when saving. I've tried using **lock** statement where I save them, but it didn't help at all. I've noticed setting `sw.AutoFlush` to `false` instead of `true` helps a bit. I am aware that the problem is caused by multithreaded nature of the application, but I just can't be bothered enough to fix it. Setting lower thread count (8-16), or higher timeout, also helps, but that one is self-explanatory. 
+<br>
+TL;DR you have to compromise between time and accuracy  
 
 <br>
 
