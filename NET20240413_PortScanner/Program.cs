@@ -12,7 +12,7 @@ namespace NET20240413_PortScanner
             // Customizable
             int threadAmount = 16;      // Amount of threads to run on
             int timeout = 100;          // Request timeout (ms)
-            short port = 25565;         // Port to scan for
+            ushort port = 25565;        // Port to scan for
             IPAddress addressStart = IPAddress.Parse("130.61.0.0");     // Start IP address, inclusive
             IPAddress addressEnd = IPAddress.Parse("130.61.255.255");   // End IP address, inclusive
 
@@ -66,7 +66,7 @@ namespace NET20240413_PortScanner
         /// <param name="port">Port to check for</param>
         /// <param name="timeout">Optional; request timeout (in ms)</param>
         /// <returns></returns>
-        public static bool CheckPort(IPAddress address, short port, int timeout = 100)
+        public static bool CheckPort(IPAddress address, ushort port, int timeout = 100)
         {
             TcpClient client = new TcpClient();
             try
